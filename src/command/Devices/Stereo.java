@@ -1,4 +1,4 @@
-package command;
+package command.Devices;
 
 /**
  * Created by sa on 21.03.16.

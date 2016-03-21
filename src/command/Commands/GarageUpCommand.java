@@ -1,6 +1,6 @@
 package command.Commands;
 
-import command.GarageDoor;
+import command.Devices.GarageDoor;
 
 /**
  * Created by sa on 21.03.16.
@@ -17,5 +17,10 @@ public class GarageUpCommand implements Command{
     public void execute()
     {
         garageDoor.up();
+    }
+
+    @Override
+    public void undo() {
+        garageDoor.down();
     }
 }

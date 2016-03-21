@@ -9,6 +9,7 @@ import command.Commands.NoCommand;
 public class SimpleRemoteControl {
     Command[] onCommands;
     Command[] offCommands;
+    Command undoCommand;
 
     public SimpleRemoteControl() {
         this.onCommands = new Command[7];
@@ -18,6 +19,7 @@ public class SimpleRemoteControl {
             onCommands[i]=noCommand;
             offCommands[i]=noCommand;
         }
+        undoCommand=noCommand;
     }
 
     Command slot;
@@ -27,12 +29,19 @@ public class SimpleRemoteControl {
         offCommands[slot]=offCommand;
     }
 
-    public void onBbuttonWasPressed(int slot){
+    public void onButtonWasPressed(int slot){
         onCommands[slot].execute();
+        undoCommand=onCommands[slot];
     }
 
-    public void offBbuttonWasPressed(int slot){
+    public void offButtonWasPressed(int slot)
+    {
         offCommands[slot].execute();
+        undoCommand=offCommands[slot];
+    }
+
+    public void undoButtonWasPressed(){
+        undoCommand.undo();
     }
 
     public String toString(){

@@ -1,6 +1,6 @@
 package command.Commands;
 
-import command.Light;
+import command.Devices.Light;
 
 /**
  * Created by sa on 21.03.16.
@@ -15,5 +15,10 @@ public class LightOffCommand implements Command {
     @Override
     public void execute() {
         light.off();
+    }
+
+    @Override
+    public void undo() {
+        light.on();
     }
 }
