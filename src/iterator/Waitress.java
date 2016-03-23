@@ -17,6 +17,7 @@ public class Waitress {
         Iteratable<MenuItem> dinerIterator = dinerMenu.createIterator();
         System.out.println("Menu\n-------\nBREAKFAST");
         printMenu(pancakeIterator);
+        System.out.println();
         System.out.println("Menu\n-------\nLUNCH");
         printMenu(dinerIterator);
 

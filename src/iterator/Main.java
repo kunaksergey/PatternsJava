@@ -8,9 +8,10 @@ import java.util.List;
  */
 public class Main {
     public static void main(String[] args) {
-        MenuItem[] items1 = new MenuItem[5];
-        List<MenuItem>=new ArrayList<>();
-        Waitress waitress = new Waitress(new PancakeHouseMenu<MenuItems>(), new DinerMenu());
+
+        Main main = new Main();
+        Waitress waitress = new Waitress(new PancakeHouseMenu<MenuItem>(main.getListItems()),
+                new DinerMenu<MenuItem>(main.getArrayItems()));
         waitress.printMenu();
 
     }
@@ -23,6 +24,7 @@ public class Main {
         list.add(new MenuItem("Компот", "с сухофруктми", 2f));
         list.add(new MenuItem("Кофе", "Jacobs", 3f));
         list.add(new MenuItem("Курасан", "со сгущенкой", 1.5f));
+        return list;
     }
 
     MenuItem[] getArrayItems() {
@@ -32,6 +34,6 @@ public class Main {
         menuItems[2] = new MenuItem("Компот", "с черносливом", 4f);
         menuItems[3] = new MenuItem("Пюре", "постное", 4f);
         menuItems[4] = new MenuItem("Отбивная", "куриная", 4f);
-
+        return menuItems;
     }
 }

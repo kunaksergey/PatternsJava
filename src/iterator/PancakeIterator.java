@@ -1,16 +1,34 @@
 package iterator;
 
+import java.util.List;
+
 /**
  * Created by superkostya on 23.03.16.
  */
 public class PancakeIterator<E> implements Iteratable {
-    @Override
-    public boolean hasNext() {
-        return false;
+    List<E> items;
+    int position = 0;
+
+    public PancakeIterator(List<E> list) {
+        this.items = list;
     }
 
     @Override
-    public Object next() {
-        return null;
+    public boolean hasNext() {
+        if (position >= items.size() || items.get(position) == null) {
+            return false;
+        } else {
+            return true;
+        }
+    }
+
+    @Override
+    public E next() {
+        E menuItem = items.get(position);
+        position = position + 1;
+        return menuItem;
     }
 }
+
+
+
