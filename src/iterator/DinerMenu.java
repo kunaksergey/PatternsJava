@@ -8,6 +8,10 @@ public class DinerMenu {
     int numberOfItems = 0;
     MenuItem[] menuItems;
 
+    public DinerMenu() {
+
+    }
+
     public Iteratable createIterator() {
         return new DinerMenuIterator<MenuItem>(menuItems);
     }

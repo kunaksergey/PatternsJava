@@ -4,8 +4,8 @@ package iterator;
  * Created by superkostya on 23.03.16.
  */
 public class Waitress {
-    PancakeHouseMenu pancakeHouseMenu;
-    DinerMenu dinerMenu;
+    private PancakeHouseMenu pancakeHouseMenu;
+    private DinerMenu dinerMenu;
 
     public Waitress(PancakeHouseMenu pancakeHouseMenu, DinerMenu dinerMenu) {
         this.pancakeHouseMenu = pancakeHouseMenu;
@@ -13,8 +13,8 @@ public class Waitress {
     }
 
     public void printMenu() {
-        Iteratable pancakeIterator = pancakeHouseMenu.createIterator();
-        Iteratable dinerIterator = dinerMenu.createIterator();
+        Iteratable<MenuItem> pancakeIterator = pancakeHouseMenu.createIterator();
+        Iteratable<MenuItem> dinerIterator = dinerMenu.createIterator();
         System.out.println("Menu\n-------\nBREAKFAST");
         printMenu(pancakeIterator);
         System.out.println("Menu\n-------\nLUNCH");
@@ -22,10 +22,10 @@ public class Waitress {
 
     }
 
-    private void printMenu(Iteratable iterator) {
+    private void printMenu(Iteratable<MenuItem> iterator) {
         while (iterator.hasNext()) {
             MenuItem menuItem = iterator.next();
-            System.out.printf("/s  /f -- /s",
+            System.out.printf("%s  %f -- %s\n",
                     menuItem.getName(),
                     menuItem.getPrice(),
                     menuItem.getDescription()

@@ -3,7 +3,7 @@ package iterator;
 /**
  * Created by superkostya on 23.03.16.
  */
-public class DinerMenuIterator<E> implements Iteratable<E> {
+public class DinerMenuIterator<E> implements Iteratable {
     E[] items;
     int position = 0;
 

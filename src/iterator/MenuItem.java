@@ -8,6 +8,12 @@ public class MenuItem {
     String description;
     double price;
 
+    public MenuItem(String name, String description, double price) {
+        this.name = name;
+        this.description = description;
+        this.price = price;
+    }
+
     public void setName(String name) {
         this.name = name;
     }
