@@ -13,6 +13,7 @@ public class Main {
         Waitress waitress = new Waitress(new PancakeHouseMenu<MenuItem>(main.getListItems()),
                 new DinerMenu<MenuItem>(main.getArrayItems()));
         waitress.printMenu();
+
     }
 
     List<MenuItem> getListItems() {
