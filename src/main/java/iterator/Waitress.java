@@ -12,6 +12,18 @@ public class Waitress {
         this.dinerMenu = dinerMenu;
     }
 
+    public Waitress() {
+
+    }
+
+    public void setPancakeHouseMenu(PancakeHouseMenu pancakeHouseMenu) {
+        this.pancakeHouseMenu = pancakeHouseMenu;
+    }
+
+    public void setDinerMenu(DinerMenu dinerMenu) {
+        this.dinerMenu = dinerMenu;
+    }
+
     public void printMenu() {
         Iteratable<MenuItem> pancakeIterator = pancakeHouseMenu.createIterator();
         Iteratable<MenuItem> dinerIterator = dinerMenu.createIterator();
