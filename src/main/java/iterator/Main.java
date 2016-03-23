@@ -8,9 +8,13 @@ import java.util.List;
  */
 public class Main {
     public static void main(String[] args) {
+        Waitress waitress;
 
         Main main = new Main();
-        Waitress waitress = new Waitress(new PancakeHouseMenu<MenuItem>(main.getListItems()),
+       for (int i=0;i<6;i++){
+           System.out.println(i);
+       }
+        waitress = new Waitress(new PancakeHouseMenu<MenuItem>(main.getListItems()),
                 new DinerMenu<MenuItem>(main.getArrayItems()));
         waitress.printMenu();
     }
