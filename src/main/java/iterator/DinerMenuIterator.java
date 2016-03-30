@@ -1,9 +1,11 @@
 package iterator;
 
+import java.util.Iterator;
+
 /**
  * Created by superkostya on 23.03.16.
  */
-public class DinerMenuIterator<E> implements Iteratable {
+public class DinerMenuIterator<E> implements Iterator {
     E[] items;
     int position = 0;
 

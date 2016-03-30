@@ -1,6 +1,7 @@
 package iterator;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 /**
@@ -14,8 +15,10 @@ public class Main {
        for (int i=0;i<6;i++){
            System.out.println(i);
        }
-        waitress = new Waitress(new PancakeHouseMenu<MenuItem>(main.getListItems()),
-                new DinerMenu<MenuItem>(main.getArrayItems()));
+        waitress = new Waitress(
+                        new PancakeHouseMenu<MenuItem>(main.getListItems()),
+                        new DinerMenu<MenuItem>(main.getArrayItems()),
+                        new CafeMenu<MenuItem>(main.getHashMapItem()));
         waitress.printMenu();
     }
 
@@ -38,5 +41,12 @@ public class Main {
         menuItems[3] = new MenuItem("Пюре", "постное", 4f);
         menuItems[4] = new MenuItem("Отбивная", "куриная", 4f);
         return menuItems;
+    }
+
+    public HashMap<String,MenuItem> getHashMapItem() {
+        HashMap<String,MenuItem> hashMapItem=new HashMap<>();
+        hashMapItem.put("Burger",new MenuItem("Бургер", "с мясом",0.5f));
+        hashMapItem.put("Coffee",new MenuItem("Кофе", "с булочкой",1.0f));
+        return hashMapItem;
     }
 }

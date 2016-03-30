@@ -4,9 +4,8 @@ import org.junit.Before;
 import org.junit.Test;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
-
-import static org.junit.Assert.*;
 
 /**
  * Created by sa on 23.03.16.
@@ -32,9 +31,15 @@ public class WaitressTest {
                 new MenuItem("Пюре", "постное", 4f),
                 new MenuItem("Отбивная", "куриная", 4f)
         };
+        HashMap<String,MenuItem> hashMapItem=new HashMap<>();
+        hashMapItem.put( "Burger",new MenuItem("Бургер", "с мясом",0.5f));
+        hashMapItem.put("Coffee",new MenuItem("Кофе", "с булочкой",1.0f));
 
-        waitress = new Waitress(new PancakeHouseMenu<MenuItem>(listItems),
-                new DinerMenu<MenuItem>(arrayItems));
+        waitress = new Waitress(
+                new PancakeHouseMenu<MenuItem>(listItems),
+                new DinerMenu<MenuItem>(arrayItems),
+                new CafeMenu<MenuItem>(hashMapItem)
+                );
     }
 
     @Test
